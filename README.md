@@ -18,7 +18,7 @@ In case the same request is received in TL-Api , the response from the third par
 
 Accomodating the design considerations :
 
-1.	To cater to the peak volume of requests during the initial startup, Spring cloud Load balancer (SpringCloud Ribbob ) and service discovery (SpringCloud Eureka ) can be employed to scale the TL-Api service horizontally. Asynchronous CompletableFuture is used so that the response time for the service is not affected.
+1.	To cater to the peak volume of requests during the initial startup, Spring cloud Load balancer (SpringCloud Ribbon ) and service discovery (SpringCloud Eureka ) can be employed to scale the TL-Api service horizontally. Asynchronous CompletableFuture is used so that the response time for the service is not affected.
 2.	The time-out of the TL-Api service is set as 15 sec to cater to the timeout of 10 Secs of the third-party service. 
 3.	Processed request are persisted in Cassandra table having TTL for 7 year which can be used to Audi purpose.
 
